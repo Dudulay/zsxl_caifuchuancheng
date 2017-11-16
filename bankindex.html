@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>招商信诺财富传承保障计划</title>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/bankindex.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+
+<!--以下为实现nested scroll 滚动的关键代码-->
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+    }
+/*下面这段控制总swiper-container的样式不能少，而且不能改为只用在swiper-container-2上*/
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+
+ /*可有可无，看需要.swiper-container-2 {
+        width: 100%;
+        height: 100%;
+    }*/
+
+    .swiper-slide-2 {
+        
+        font-size: 18px;
+        height: auto; 
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; 
+        /*padding: 30px;*/
+    }
+    </style>
+<!--以下为实现nested滚动的关键代码-->
+
+</head>
+<body>
+
+
+
+<!-- Slider main container -->
+<div class="swiper-container swiper-container-1">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide swiper-slide-2" >
+            <img src="images/bgimg1.jpg" alt="bgimg1" width="100%" height="100%">
+            <img src="images/img1-1.png" class="img1-1 ani " swiper-animate-effect="painting">
+            <img src="images/img1-2.png" class="img1-2 ani " swiper-animate-effect="common1">
+            <img src="images/img1-3.png" class="img1-3 ani " swiper-animate-effect="common2">
+            <img src="images/img1-4.png" class="img1-4 ani " swiper-animate-effect="movee1">
+            <img src="images/img1-5.png" class="img1-5 ani " swiper-animate-effect="common">
+            <img src="images/img1-6.png" class="img1-6 ani " swiper-animate-effect="movee2">
+            <!-- <img src="images/img1-1.png" class="img1-1 ani fadeIn animated " swiper-animate-effect="fadeIn"
+            swiper-animate-duration="2s" swiper-animate-delay="0.5s"> -->
+            <!-- <img src="images/img1-2.png" class="img1-2 ani fadeIn animated " swiper-animate-effect="fadeIn"
+            swiper-animate-duration="2s" swiper-animate-delay="2s" > -->
+           <!--  <img src="images/img1-3.png" class="img1-3 ani fadeIn animated " swiper-animate-effect="fadeIn"
+           swiper-animate-duration="2s" swiper-animate-delay="1.7s">
+           <img src="images/img1-4.png" class="img1-4 ani slideInRight animated " swiper-animate-effect="slideInRight"
+           swiper-animate-duration="2s" swiper-animate-delay="0.5s">
+           <img src="images/img1-5.png" class="img1-5 ani fadeIn animated " swiper-animate-effect="fadeIn"
+           swiper-animate-duration="2s" swiper-animate-delay="2s">
+           <img src="images/img1-6.png" class="img1-6 ani slideInLeft animated " swiper-animate-effect="slideInLeft"
+           swiper-animate-duration="2s" swiper-animate-delay="0.5s"> -->
+        </div>
+        <div class="swiper-slide">
+            <div class="swiper-container swiper-container-2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-slide-2">
+                        <img src="images/bgimg2.jpg" alt="bgimg" width="100%" height="auto" >
+                        </div>
+                    </div>
+                    <!-- If we need scrollbar -->
+                       <!-- Add Scroll Bar -->
+            <div class="swiper-scrollbar swiper-scrollbar-2"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="swiper-container swiper-container-2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide-2">
+                    <img src="images/bgimg3.jpg" alt="bgimg3" width="100%" height="auto" >
+                    </div>
+                </div>
+                <!-- If we need scrollbar -->
+                   <!-- Add Scroll Bar -->
+                <div class="swiper-scrollbar swiper-scrollbar-2"></div>
+            </div>
+        </div>
+    <div class="swiper-slide swiper-slide-2" >
+            <img src="images/bgimg4.jpg" alt="bgimg3" width="100%" height="100%" >
+            <img src="images/img4-word1.png" class="img4-word1">
+            <img src="images/img4-word2.png" class="img4-word2">
+            <img src="images/img4-word3.png" class="img4-word3">
+            <img src="images/img4-word4.png" class="img4-word4">
+    </div>
+
+    <!-- If we need pagination
+    <div class="swiper-pagination"></div>-->
+
+    <!-- If we need navigation buttons
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>-->
+
+
+</div>
+
+<script type="text/javascript" src="js/swiper.animate.min.js"></script>
+<script type="text/javascript" src='js/swiper.min.js'></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!--    onlyExternal : true  -->
+<script type="text/javascript">
+    var mySwiper = new Swiper('.swiper-container-1', {
+        /*spaceBetween: 10,*/
+        direction : 'vertical',
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+          swiperAnimateCache(swiper); //隐藏动画元素 
+          /*swiperAnimate(swiper);*/ //初始化完成开始动画
+          setTimeout(function(){ //2s后开始运行动画（移动端总是没加载完图片就开始动画了。。。。。）
+                swiperAnimate(swiper); //初始化完成开始动画
+            },1000)
+        }, 
+        onSlideChangeEnd: function(swiper){ 
+          swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        } 
+
+    });
+    var mySwiper2 = new Swiper('.swiper-container-2', {
+        scrollbar: '.swiper-scrollbar-2',
+        nested : true,
+        scrollbarHide:false,
+        direction : 'vertical',
+        mousewheelControl: true,
+        slidesPerView: 'auto',
+        freeMode: true
+    });
+    $(function () {
+        //创建分享
+        function funcShare() {
+            $.ajax({
+                async: false,
+                url: "ShareHandler.ashx",
+                data: { dataurl: location.href.split("#")[0] },
+                success: function (res) {
+                    var json = eval("(" + res + ")");
+                    console.log(json);
+                    var jsApiList = ["onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ", "onMenuShareWeibo", "onMenuShareQZone"];
+                    wx.config({
+                        debug: false,
+                        appId: json.wxappid,
+                        timestamp: json.timestamp,
+                        nonceStr: json.noncestr,
+                        signature: json.strSige,
+                        jsApiList: jsApiList
+                    });
+                }
+            });
+        }
+        //签名完成
+        wx.ready(function () {
+
+            console.log("验证完成！！！");
+
+            var title = "招商信诺财富传承保障计划";
+            var desc = "招商信诺年金保障计划+招商信诺财富保障计划";
+            var link = location.href.split("#")[0];
+            var imgUrl = "http://www.to-morrow.com/bankservice/images/share.jpg";
+
+            //朋友圈
+            wx.onMenuShareTimeline({
+                title: title,
+                link: link,
+                imgUrl: imgUrl
+            });
+
+            //朋友
+            wx.onMenuShareAppMessage({
+                title: title,
+                desc: desc,
+                link: link,
+                imgUrl: imgUrl
+            });
+
+            //QQ
+            wx.onMenuShareQQ({
+                title: title,
+                desc: desc,
+                link: link,
+                imgUrl: imgUrl
+            });
+
+            //微博
+            wx.onMenuShareWeibo({
+                title: title,
+                desc: desc,
+                link: link,
+                imgUrl: imgUrl
+            });
+
+            //QQ空间
+            wx.onMenuShareQZone({
+                title: title,
+                desc: desc,
+                link: link,
+                imgUrl: imgUrl
+            });
+
+        });
+        funcShare();
+    });
+</script>
+</body>
+</html>
